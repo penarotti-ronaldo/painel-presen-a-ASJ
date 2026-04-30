@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Escolar - Painel de Presença</title>
+    
+    <!-- Bibliotecas -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- PLAYER -->
+<div id="fullscreenPlayer" class="fullscreen-player">
+    <div class="player-container">
+        <div class="player-header">
+            <h1>📊 PAINEL DE PRESENÇA</h1>
+            <p>Colégio Estadual do Campo de Alto São João</p>
+        </div>
+
+        <div id="playerSlidesContainer"></div>
+
+        <div class="progresso-container-player">
+            <div class="progresso-bar-player">
+                <div id="progressoFillPlayer" class="progresso-fill-player"></div>
+            </div>
+            <div class="contador-player">
+                <span id="slideAtualPlayer">0</span> /
+                <span id="totalSlidesPlayer">0</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Upload Planilha -->
+<input type="file" id="fileInputPrincipal" accept=".xlsx,.xls,.csv" hidden>
+
+<div class="upload-area-principal" onclick="document.getElementById('fileInputPrincipal').click()">
+    📂 Upload Planilha
+</div>
+
+<!-- Upload Mídia -->
+<input type="file" id="mediaInput" accept="image/*,video/*" multiple hidden>
+
+<div class="upload-area-principal media-btn" onclick="document.getElementById('mediaInput').click()">
+    🎬 Upload Mídias
+</div>
+
+<!-- JavaScript -->
+<script src="script.js"></script>
+</body>
+</html>
